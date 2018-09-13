@@ -16,7 +16,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Api( description="API pour es opérations CRUD sur les produits.")
@@ -36,6 +38,10 @@ public class ProductController {
 
         Iterable<Product> produits = productDao.findAll();
 
+        return filterMappingJacksonValue(produits);
+    }
+
+    private MappingJacksonValue filterMappingJacksonValue(Iterable<Product> produits) {
         SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
 
         FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
@@ -103,6 +109,18 @@ public class ProductController {
         return productDao.chercherUnProduitCher(400);
     }
 
+    @GetMapping(value = "/AdminProduits")
+    public Map<Product, Integer> calculerMargeProduit() {
+        Map<Product, Integer> productsMargin = new HashMap<>();
+        productDao.findAll().forEach( product -> productsMargin.put(product, product.getPrix() - product.getPrixAchat()));
+        int marge = 0;
+        return productsMargin;
+    }
+
+    @GetMapping(value = "/Produits/Trie")
+    public MappingJacksonValue trierProduitsParOrdreAlphabetique() {
+        return filterMappingJacksonValue(productDao.findAllByOrderByNomAsc());
+    }
 
 
 }
