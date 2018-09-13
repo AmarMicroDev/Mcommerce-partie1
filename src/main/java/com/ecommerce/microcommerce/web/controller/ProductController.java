@@ -117,6 +117,10 @@ public class ProductController {
         return productsMargin;
     }
 
+    @GetMapping(value = "/Produits/Trie")
+    public MappingJacksonValue trierProduitsParOrdreAlphabetique() {
+        return filterMappingJacksonValue(productDao.findAllByOrderByNomAsc());
+    }
 
 
 }
