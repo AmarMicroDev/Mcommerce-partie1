@@ -21,7 +21,7 @@ import java.util.Collection;
 import java.util.List;
 
 
-@Api( description="API pour es opérations CRUD sur les produits.")
+@Api( description="API pour les opérations CRUD sur les produits.")
 
 @RestController
 public class ProductController {
@@ -39,6 +39,14 @@ public class ProductController {
 			output.add(p.toString() + " : " + p.getMarge());
 		}
         return output;
+    }
+    
+    @ApiOperation(value = "Récupère la liste des produits triés par ordre alphabétique")
+    @GetMapping(value = "/Produits/trierAlpha")
+    public Iterable<Product> trierProduitsParOrdreAlphabetique() {
+
+    	Iterable<Product> produits = productDao.findByOrderByNom();
+        return produits;
     }
     
     //Récupérer la liste des produits
