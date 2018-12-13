@@ -2,6 +2,7 @@ package com.ecommerce.microcommerce.web.controller;
 
 import com.ecommerce.microcommerce.dao.ProductDao;
 import com.ecommerce.microcommerce.model.Product;
+import com.ecommerce.microcommerce.web.exceptions.ProduitGratuitException;
 import com.ecommerce.microcommerce.web.exceptions.ProduitIntrouvableException;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
@@ -16,18 +17,39 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
-@Api( description="API pour es opérations CRUD sur les produits.")
+@Api( description="API pour les opérations CRUD sur les produits.")
 
 @RestController
 public class ProductController {
 
     @Autowired
     private ProductDao productDao;
+    
+    @ApiOperation(value = "Récupère la liste des produits avec les marges réalisées par le vendeur")
+    @GetMapping(value = "/AdminProduits")
+    public Collection<String> calculerMargeProduit() {
 
+    	Iterable<Product> produits = productDao.findAll();
+    	Collection<String> output = new ArrayList<>();
+    	for (Product p : produits) {
+			output.add(p.toString() + " : " + p.getMarge());
+		}
+        return output;
+    }
+    
+    @ApiOperation(value = "Récupère la liste des produits triés par ordre alphabétique")
+    @GetMapping(value = "/Produits/trierAlpha")
+    public Iterable<Product> trierProduitsParOrdreAlphabetique() {
 
+    	Iterable<Product> produits = productDao.findByOrderByNom();
+        return produits;
+    }
+    
     //Récupérer la liste des produits
 
     @RequestMapping(value = "/Produits", method = RequestMethod.GET)
@@ -68,7 +90,8 @@ public class ProductController {
     @PostMapping(value = "/Produits")
 
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
-
+    	if(product.getPrix()==0)
+    		throw new ProduitGratuitException("Il est interdit de rendre un produit gratuit");
         Product productAdded =  productDao.save(product);
 
         if (productAdded == null)
@@ -91,7 +114,8 @@ public class ProductController {
 
     @PutMapping (value = "/Produits")
     public void updateProduit(@RequestBody Product product) {
-
+    	if(product.getPrix()==0)
+    		throw new ProduitGratuitException("Il est interdit de rendre un produit gratuit");
         productDao.save(product);
     }
 
