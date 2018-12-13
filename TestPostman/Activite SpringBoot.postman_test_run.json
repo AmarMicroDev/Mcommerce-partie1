@@ -1,0 +1,727 @@
+{
+	"id": "eed20685-95ce-4bc9-a8b6-ff159ca62480",
+	"name": "Activite SpringBoot",
+	"allTests": [],
+	"timestamp": "2018-12-13T21:58:56.902Z",
+	"collection_id": "8490fd39-fb10-409e-8660-4c01421b6330",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "8490fd39-fb10-409e-8660-4c01421b6330",
+		"name": "Activite SpringBoot",
+		"description": null,
+		"auth": null,
+		"events": null,
+		"variables": null,
+		"order": [
+			"dbc3b483-f151-4935-94a7-b2f555b5c918",
+			"59374b02-10a8-4a71-ae16-9f6765ab2321",
+			"09d578f3-43ff-4fab-9340-de5f19a71d24",
+			"df12eaf2-a837-47fb-b4ab-7dfe102b8130",
+			"75a1f3d9-349c-431b-8af2-9e6133058d1a",
+			"913ad3ea-50dd-45c0-aa58-34caac5e7d33",
+			"4b37ff92-133a-41e6-a0ad-3f3c745656e7",
+			"22439ea7-f2f2-4dd3-9912-9424cab80819",
+			"6df1cfd4-8c9e-4c77-b0b6-f99d70ac4f96",
+			"31078639-fad6-4051-bfbf-989b671ec615",
+			"0475cfba-8d09-4890-9d7e-0a2be5852758",
+			"a38b6c61-c2ad-4cbb-9181-ad3972b6bdb9",
+			"55357aed-2e32-43b4-86bb-1cd7c1c12cb3",
+			"91cf9f25-0f81-4a91-95b4-547b39079b87",
+			"6712c305-4f09-4368-9979-7858f0fed37f"
+		],
+		"folders_order": [],
+		"owner": "4348525",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "listeProduits",
+			"id": "dbc3b483-f151-4935-94a7-b2f555b5c918",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"error": null,
+				"name": "Status code is 200",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"160"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "160",
+			"totalRequestTime": "160",
+			"iterationResults": {}
+		},
+		{
+			"name": "getProduit 2000",
+			"id": "59374b02-10a8-4a71-ae16-9f6765ab2321",
+			"url": "localhost:9090/Produits/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"error": null,
+				"name": "Status code is 200",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"24"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "24",
+			"totalRequestTime": "24",
+			"iterationResults": {}
+		},
+		{
+			"name": "getProduit not existing",
+			"id": "09d578f3-43ff-4fab-9340-de5f19a71d24",
+			"url": "localhost:9090/Produits/999",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {
+				"error": null,
+				"name": "Status code is 404",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"24"
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			],
+			"time": "24",
+			"totalRequestTime": "24",
+			"iterationResults": {}
+		},
+		{
+			"name": "SaveProduit poney",
+			"id": "df12eaf2-a837-47fb-b4ab-7dfe102b8130",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"77"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "77",
+			"totalRequestTime": "77",
+			"iterationResults": {}
+		},
+		{
+			"name": "SaveProduit with id briquet",
+			"id": "75a1f3d9-349c-431b-8af2-9e6133058d1a",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"28"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "28",
+			"totalRequestTime": "28",
+			"iterationResults": {}
+		},
+		{
+			"name": "SaveProduit excalibur",
+			"id": "913ad3ea-50dd-45c0-aa58-34caac5e7d33",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"6"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "6",
+			"totalRequestTime": "6",
+			"iterationResults": {}
+		},
+		{
+			"name": "SaveProduit smash",
+			"id": "4b37ff92-133a-41e6-a0ad-3f3c745656e7",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "EditProduit 1",
+			"id": "22439ea7-f2f2-4dd3-9912-9424cab80819",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"18"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "18",
+			"totalRequestTime": "18",
+			"iterationResults": {}
+		},
+		{
+			"name": "getProduit 1",
+			"id": "6df1cfd4-8c9e-4c77-b0b6-f99d70ac4f96",
+			"url": "localhost:9090/Produits/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"error": null,
+				"name": "Status code is 200",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "DeleteProduit 2000",
+			"id": "31078639-fad6-4051-bfbf-989b671ec615",
+			"url": "localhost:9090/Produits/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"18"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "18",
+			"totalRequestTime": "18",
+			"iterationResults": {}
+		},
+		{
+			"name": "getProduit 2000 error status",
+			"id": "0475cfba-8d09-4890-9d7e-0a2be5852758",
+			"url": "localhost:9090/Produits/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {
+				"error": null,
+				"name": "Status code is 404",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"12"
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			],
+			"time": "12",
+			"totalRequestTime": "12",
+			"iterationResults": {}
+		},
+		{
+			"name": "SaveProduit bad (toolowprice)",
+			"id": "a38b6c61-c2ad-4cbb-9181-ad3972b6bdb9",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"15"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "15",
+			"totalRequestTime": "15",
+			"iterationResults": {}
+		},
+		{
+			"name": "SaveProduit bad (gratuit)",
+			"id": "55357aed-2e32-43b4-86bb-1cd7c1c12cb3",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 406,
+				"name": "Not Acceptable",
+				"detail": {
+					"name": "Not Acceptable",
+					"detail": "The requested resource is only capable of generating content not acceptable according to the Accept headers sent in the request."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "SaveProduit bad (toobigname)",
+			"id": "91cf9f25-0f81-4a91-95b4-547b39079b87",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"4"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "4",
+			"totalRequestTime": "4",
+			"iterationResults": {}
+		},
+		{
+			"name": "listeProduits Copy",
+			"id": "6712c305-4f09-4368-9979-7858f0fed37f",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"4"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "4",
+			"totalRequestTime": "4",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 5,
+	"totalFail": 0,
+	"totalTime": 405,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "listeProduits",
+			"id": "dbc3b483-f151-4935-94a7-b2f555b5c918",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "getProduit 2000",
+			"id": "59374b02-10a8-4a71-ae16-9f6765ab2321",
+			"url": "localhost:9090/Produits/1",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "getProduit not existing",
+			"id": "09d578f3-43ff-4fab-9340-de5f19a71d24",
+			"url": "localhost:9090/Produits/999",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "SaveProduit poney",
+			"id": "df12eaf2-a837-47fb-b4ab-7dfe102b8130",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "SaveProduit with id briquet",
+			"id": "75a1f3d9-349c-431b-8af2-9e6133058d1a",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "SaveProduit excalibur",
+			"id": "913ad3ea-50dd-45c0-aa58-34caac5e7d33",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "SaveProduit smash",
+			"id": "4b37ff92-133a-41e6-a0ad-3f3c745656e7",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "EditProduit 1",
+			"id": "22439ea7-f2f2-4dd3-9912-9424cab80819",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "getProduit 1",
+			"id": "6df1cfd4-8c9e-4c77-b0b6-f99d70ac4f96",
+			"url": "localhost:9090/Produits/1",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "DeleteProduit 2000",
+			"id": "31078639-fad6-4051-bfbf-989b671ec615",
+			"url": "localhost:9090/Produits/1",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "getProduit 2000 error status",
+			"id": "0475cfba-8d09-4890-9d7e-0a2be5852758",
+			"url": "localhost:9090/Produits/1",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "SaveProduit bad (toolowprice)",
+			"id": "a38b6c61-c2ad-4cbb-9181-ad3972b6bdb9",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "SaveProduit bad (gratuit)",
+			"id": "55357aed-2e32-43b4-86bb-1cd7c1c12cb3",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 406,
+				"name": "Not Acceptable",
+				"detail": {
+					"name": "Not Acceptable",
+					"detail": "The requested resource is only capable of generating content not acceptable according to the Accept headers sent in the request."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "SaveProduit bad (toobigname)",
+			"id": "91cf9f25-0f81-4a91-95b4-547b39079b87",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "listeProduits Copy",
+			"id": "6712c305-4f09-4368-9979-7858f0fed37f",
+			"url": "localhost:9090/Produits",
+			"time": "2018-12-13T21:58:56.902Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		}
+	],
+	"synced": false
+}
