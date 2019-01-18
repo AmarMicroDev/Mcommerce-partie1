@@ -12,6 +12,7 @@ import javax.validation.constraints.Min;
 //@JsonFilter("monFiltreDynamique")
 public class Product {
 
+	// TEST COMMIT
     @Id
     @GeneratedValue
     private int id;
@@ -35,6 +36,7 @@ public class Product {
         this.nom = nom;
         this.prix = prix;
         this.prixAchat = prixAchat;
+        
     }
 
     public int getId() {
