@@ -2,6 +2,7 @@ package com.ecommerce.microcommerce.web.controller;
 
 import com.ecommerce.microcommerce.dao.ProductDao;
 import com.ecommerce.microcommerce.model.Product;
+import com.ecommerce.microcommerce.web.exceptions.PrixIncorrectException;
 import com.ecommerce.microcommerce.web.exceptions.ProduitIntrouvableException;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -67,7 +69,10 @@ public class ProductController {
     //ajouter un produit
     @PostMapping(value = "/Produits")
 
-    public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
+    public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) throws PrixIncorrectException {
+
+        if (product.getPrix() <= 1) throw new PrixIncorrectException("le prix ne doit pas etre inferieur à zéro ") ;
+
 
         Product productAdded =  productDao.save(product);
 
@@ -95,6 +100,21 @@ public class ProductController {
         productDao.save(product);
     }
 
+    @GetMapping(value = "/AdminProduits")
+    public List<Product> calculerMargeProduit( ){
+        List<Product> product = productDao.findAll();
+        List marge = new ArrayList();
+        for (Product product1:product) {
+            marge.add(product1.toString()+":"+Integer.toString(product1.getPrix()-product1.getPrixAchat()));
+        }
+        return marge;
+    }
+
+    @GetMapping(value = "/ListProduits")
+    public List<Product> trierProduitsParOrdreAlphabetique(){
+        List<Product> produit =productDao.listeProduitOrOrderByNom();
+        return produit;
+    }
 
     //Pour les tests
     @GetMapping(value = "test/produits/{prix}")
