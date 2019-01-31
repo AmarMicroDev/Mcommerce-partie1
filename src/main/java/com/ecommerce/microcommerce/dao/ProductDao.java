@@ -22,4 +22,6 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
 
     @Query("SELECT p FROM Product p ORDER BY p.nom")
     List<Product> listeProduitOrOrderByNom();
+
+    List<Product> findAllByOrderByNom ();
 }

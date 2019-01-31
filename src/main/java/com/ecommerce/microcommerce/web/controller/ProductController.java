@@ -112,8 +112,9 @@ public class ProductController {
 
     @GetMapping(value = "/ListProduits")
     public List<Product> trierProduitsParOrdreAlphabetique(){
-        List<Product> produit =productDao.listeProduitOrOrderByNom();
-        return produit;
+//        List<Product> produit =productDao.listeProduitOrOrderByNom();
+//        return produit;
+        return productDao.findAllByOrderByNom();
     }
 
     //Pour les tests
