@@ -1,6 +1,5 @@
 package com.ecommerce.microcommerce.model;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
@@ -16,7 +15,7 @@ public class Product {
     @GeneratedValue
     private int id;
 
-    @Length(min=3, max=20, message = "Nom trop long ou trop court. Et oui messages sont plus stylés que ceux de Spring")
+    @Length(min = 3, max = 20, message = "Nom trop long ou trop court. Et oui messages sont plus stylés que ceux de Spring")
     private String nom;
 
     @Min(value = 1)
@@ -76,5 +75,9 @@ public class Product {
                 ", nom='" + nom + '\'' +
                 ", prix=" + prix +
                 '}';
+    }
+
+    public Integer getMarge() {
+        return prix - prixAchat;
     }
 }

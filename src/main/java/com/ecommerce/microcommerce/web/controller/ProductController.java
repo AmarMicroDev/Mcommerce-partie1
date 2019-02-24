@@ -16,10 +16,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
 
 
-@Api( description="API pour es opérations CRUD sur les produits.")
+@Api(description = "API pour es opérations CRUD sur les produits.")
 
 @RestController
 public class ProductController {
@@ -56,12 +57,12 @@ public class ProductController {
 
         Product produit = productDao.findById(id);
 
-        if(produit==null) throw new ProduitIntrouvableException("Le produit avec l'id " + id + " est INTROUVABLE. Écran Bleu si je pouvais.");
+        if (produit == null) {
+            throw new ProduitIntrouvableException("Le produit avec l'id " + id + " est INTROUVABLE. Écran Bleu si je pouvais.");
+        }
 
         return produit;
     }
-
-
 
 
     //ajouter un produit
@@ -69,10 +70,11 @@ public class ProductController {
 
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
 
-        Product productAdded =  productDao.save(product);
+        Product productAdded = productDao.save(product);
 
-        if (productAdded == null)
+        if (productAdded == null) {
             return ResponseEntity.noContent().build();
+        }
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
@@ -83,13 +85,13 @@ public class ProductController {
         return ResponseEntity.created(location).build();
     }
 
-    @DeleteMapping (value = "/Produits/{id}")
+    @DeleteMapping(value = "/Produits/{id}")
     public void supprimerProduit(@PathVariable int id) {
 
         productDao.delete(id);
     }
 
-    @PutMapping (value = "/Produits")
+    @PutMapping(value = "/Produits")
     public void updateProduit(@RequestBody Product product) {
 
         productDao.save(product);
@@ -98,11 +100,22 @@ public class ProductController {
 
     //Pour les tests
     @GetMapping(value = "test/produits/{prix}")
-    public List<Product>  testeDeRequetes(@PathVariable int prix) {
+    public List<Product> testeDeRequetes(@PathVariable int prix) {
 
         return productDao.chercherUnProduitCher(400);
     }
 
 
+    @ApiOperation(value = "Récupère un produit et sa marge")
+    @GetMapping(value = "/AdminProduits")
+    public HashMap<Product, Integer> calculerMargeProduit() {
+        HashMap<Product, Integer> results = new HashMap<>();
+        List<Product> all = productDao.findAll();
+        all.stream().forEach(product -> {
+            results.put(product, product.getMarge());
+
+        });
+        return results;
+    }
 
 }
