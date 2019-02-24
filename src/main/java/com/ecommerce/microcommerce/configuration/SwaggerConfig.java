@@ -19,4 +19,14 @@ public class SwaggerConfig {
                 .paths(PathSelectors.regex("/Produits.*"))
                 .build();
     }
+
+    @Bean
+    public Docket apiPart2() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("part 2")
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.ecommerce.microcommerce.web"))
+                .paths(PathSelectors.regex("/Products.*"))
+                .build();
+    }
 }
