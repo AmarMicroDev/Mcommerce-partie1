@@ -16,8 +16,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 @Api( description="API pour es opérations CRUD sur les produits.")
 
@@ -29,21 +30,13 @@ public class ProductController {
 
 
     //Récupérer la liste des produits
-
     @RequestMapping(value = "/Produits", method = RequestMethod.GET)
-
     public MappingJacksonValue listeProduits() {
-
         Iterable<Product> produits = productDao.findAll();
-
         SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
-
         FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
-
         MappingJacksonValue produitsFiltres = new MappingJacksonValue(produits);
-
         produitsFiltres.setFilters(listDeNosFiltres);
-
         return produitsFiltres;
     }
 
@@ -51,26 +44,17 @@ public class ProductController {
     //Récupérer un produit par son Id
     @ApiOperation(value = "Récupère un produit grâce à son ID à condition que celui-ci soit en stock!")
     @GetMapping(value = "/Produits/{id}")
-
     public Product afficherUnProduit(@PathVariable int id) {
-
         Product produit = productDao.findById(id);
-
         if(produit==null) throw new ProduitIntrouvableException("Le produit avec l'id " + id + " est INTROUVABLE. Écran Bleu si je pouvais.");
-
         return produit;
     }
 
 
-
-
     //ajouter un produit
     @PostMapping(value = "/Produits")
-
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
-
         Product productAdded =  productDao.save(product);
-
         if (productAdded == null)
             return ResponseEntity.noContent().build();
 
@@ -79,19 +63,20 @@ public class ProductController {
                 .path("/{id}")
                 .buildAndExpand(productAdded.getId())
                 .toUri();
-
         return ResponseEntity.created(location).build();
     }
 
+
+    //supprimer un produit
     @DeleteMapping (value = "/Produits/{id}")
     public void supprimerProduit(@PathVariable int id) {
-
         productDao.delete(id);
     }
 
+
+    //modifier un produit
     @PutMapping (value = "/Produits")
     public void updateProduit(@RequestBody Product product) {
-
         productDao.save(product);
     }
 
@@ -99,10 +84,20 @@ public class ProductController {
     //Pour les tests
     @GetMapping(value = "test/produits/{prix}")
     public List<Product>  testeDeRequetes(@PathVariable int prix) {
-
         return productDao.chercherUnProduitCher(400);
     }
 
 
+    //calculer la marge d'un produit
+    @GetMapping(value = "/AdminProduits")
+    @ApiOperation(value = "Calculer la marge de chaque produit (différence entre prix d‘achat et prix de vente)")
+    public Map<Product, Integer> calculerMargeProduit(){
+        Map<Product, Integer> productsWithMargin = new HashMap();
+        List<Product> products = productDao.findAll();
+        for (Product product : products) {
+            productsWithMargin.put(product, product.getPrix() - product.getPrixAchat());
+        }
+        return productsWithMargin;
+    }
 
 }
