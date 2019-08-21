@@ -1,0 +1,110 @@
+{
+	"id": "e20a526c-4750-ba3f-c01f-6b7f570c440c",
+	"name": "Tests du projet Mcommerce-Partie1",
+	"description": "",
+	"order": [
+		"7190f4c8-a0e5-cc30-19dc-96951ad828eb",
+		"d2fbe76f-dfe2-50b2-fe05-fd7ed051e14e",
+		"2ace212f-a446-0eac-b384-f665e6a4de22"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1544620873383,
+	"owner": "4655740",
+	"public": false,
+	"requests": [
+		{
+			"id": "2ace212f-a446-0eac-b384-f665e6a4de22",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9090/Produits",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "e20a526c-4750-ba3f-c01f-6b7f570c440c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:9090/Produits",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544621611119,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"id\":8,\n\t\"nom\":\"lave linge\",\n\t\"prix\":0\n}"
+		},
+		{
+			"id": "7190f4c8-a0e5-cc30-19dc-96951ad828eb",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9090/AdminProduits",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e20a526c-4750-ba3f-c01f-6b7f570c440c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:9090/AdminProduits",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544621116702,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"id\":4,\n\t\"nom\":\"lave linge\",\n\t\"prix\":500\n}"
+		},
+		{
+			"id": "d2fbe76f-dfe2-50b2-fe05-fd7ed051e14e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9090/Produits/trier",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e20a526c-4750-ba3f-c01f-6b7f570c440c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:9090/Produits/trier",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1544621180089,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"id\":4,\n\t\"nom\":\"lave linge\",\n\t\"prix\":500\n}"
+		}
+	]
+}
