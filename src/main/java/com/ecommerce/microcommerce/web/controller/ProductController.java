@@ -105,6 +105,7 @@ public class ProductController {
         return productDao.chercherUnProduitCher(400);
     }
 
+    //afficher des produits avec leur marge de prix
     @GetMapping(value ="/AdminProduits")
     public Map<Product, Integer> calculerMargeProduit(){
 
