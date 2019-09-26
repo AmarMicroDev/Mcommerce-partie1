@@ -16,10 +16,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
-@Api( description="API pour es opérations CRUD sur les produits.")
+@Api( description="API pour les opérations CRUD sur les produits.")
 
 @RestController
 public class ProductController {
@@ -103,6 +105,17 @@ public class ProductController {
         return productDao.chercherUnProduitCher(400);
     }
 
+    //afficher des produits avec leur marge de prix
+    @GetMapping(value ="/AdminProduits")
+    public Map<Product, Integer> calculerMargeProduit(){
 
+        List<Product> produits = productDao.findAll();
+        Map<Product, Integer> margeProduits = new HashMap<>();
 
+        for (Product produit : produits){
+            margeProduits.put(produit, produit.getPrix()-produit.getPrixAchat());
+        }
+
+        return margeProduits;
+    }
 }
