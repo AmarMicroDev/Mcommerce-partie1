@@ -8,7 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class MicrocommerceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MicrocommerceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MicrocommerceApplication.class, args);
+    }
 }
