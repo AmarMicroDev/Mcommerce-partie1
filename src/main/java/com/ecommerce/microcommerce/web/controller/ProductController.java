@@ -117,7 +117,7 @@ public class ProductController {
     public Map<String,Integer> calculerMargeProduit(){
         Map<String,Integer> margeProduit = new HashMap<>();
         productDao.findAll().forEach(product->{
-            margeProduit.put(product.toString() , Math.abs(product.getPrix()-product.getPrixAchat()));
+            margeProduit.put(product.toString() , product.getPrix()-product.getPrixAchat());
         });
         return margeProduit;
     }
