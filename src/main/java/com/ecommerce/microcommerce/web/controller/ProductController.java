@@ -111,7 +111,7 @@ public class ProductController {
         return productDao.findAllByOrderByNom();
     }
 
-    @GetMapping("/marge")
+    @GetMapping("/AdminProduits")
     public Map<String,Integer> calculerMargeProduit(){
         Map<String,Integer> margeProduit = new HashMap<>();
         productDao.findAll().forEach(product->{
