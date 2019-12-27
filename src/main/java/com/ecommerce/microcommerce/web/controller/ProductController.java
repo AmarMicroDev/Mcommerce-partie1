@@ -71,7 +71,7 @@ public class ProductController {
 
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) throws PrixIncorrectException {
 
-        if (product.getPrix() <= 1) throw new PrixIncorrectException("le prix ne doit pas etre inferieur à zéro ") ;
+        if (product.getPrix() <= 0) throw new PrixIncorrectException("le prix ne doit pas etre inferieur à zéro ") ;
 
 
         Product productAdded =  productDao.save(product);
