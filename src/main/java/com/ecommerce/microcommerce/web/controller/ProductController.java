@@ -24,6 +24,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.ecommerce.microcommerce.dao.ProductDao;
 import com.ecommerce.microcommerce.model.Product;
 import com.ecommerce.microcommerce.web.exceptions.ProduitIntrouvableException;
+import com.ecommerce.microcommerce.web.exceptions.ProduitPrixVenteZeroException;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
@@ -80,6 +81,12 @@ public class ProductController {
 
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
 
+    	//J'ai dû mettre à 0 min value du prix dans Product sinon cela ne passait pas la validation @Valid
+    	//que je souhaitais conserver
+    	if(product.getPrix() == 0) { 
+    		throw new ProduitPrixVenteZeroException("Le produit que vous souhaitez ajouter ne peut pas avoir un prix de vente à 0.");
+    	}
+    	
         Product productAdded =  productDao.save(product);
 
         if (productAdded == null)
