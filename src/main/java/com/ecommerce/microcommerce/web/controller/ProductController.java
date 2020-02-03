@@ -128,4 +128,12 @@ public class ProductController {
     	return result;
     }
 
+    @ApiOperation(value = "Retourne la liste de tous les produits triés par nom croissant!")
+    @GetMapping(value = "/AdminProduits/orderbyNomAsc")
+    public List<Product> trierProduitsParOrdreAlphabetique() {
+    	
+    	System.out.println("AAAA");
+    	return productDao.findAllByOrderByNomAsc();
+    }
+
 }
