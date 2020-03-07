@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "dd084666-dd50-4ae0-b60f-4c6d13252aea",
+		"name": "TutoMicroServices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Partie 1 - Affichage de la marge",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/AdminProduits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"AdminProduits"
+					]
+				},
+				"description": "Partie 1 - Affichage de la marge"
+			},
+			"response": []
+		},
+		{
+			"name": "Partie 2 - Tri par ordre alphabétique",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/AdminProduits/orderbyNomAsc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"AdminProduits",
+						"orderbyNomAsc"
+					]
+				},
+				"description": "Partie 2 - Tri par ordre alphabétique"
+			},
+			"response": []
+		},
+		{
+			"name": "Partie 3 - Validation du prix de vente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 4,\r\n        \"nom\": \"Ordinateur portable\",\r\n        \"prix\": 0,\r\n        \"prixAchat\": 120\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/Produits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits"
+					]
+				},
+				"description": "Partie 3 - Validation du prix de vente"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
