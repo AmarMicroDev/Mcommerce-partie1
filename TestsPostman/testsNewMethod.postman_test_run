@@ -1,0 +1,128 @@
+{
+	"id": "c1d0788c-9a8c-4f4f-aabc-379ef9fcf8e5",
+	"name": "testsNewMethod",
+	"timestamp": "2020-04-11T15:05:11.923Z",
+	"collection_id": "fc0478cf-97e2-48c2-b865-65a197aab287",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "52611f17-f883-4449-9ee2-0ced43aeaf54",
+			"name": "localhost:9090/Produits",
+			"url": "localhost:9090/Produits",
+			"time": 5,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "79d9d3cb-95e5-45b5-8b40-6894ccad8d1d",
+			"name": "localhost:9090/Produits",
+			"url": "localhost:9090/Produits",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7788eb0b-daca-4ad0-869c-e4e856afc777",
+			"name": "localhost:9090/Produits",
+			"url": "localhost:9090/Produits",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "aa799d0a-2bc6-4d97-93c7-d9d6ddc270b8",
+			"name": "localhost:9090/AdminsProduits",
+			"url": "localhost:9090/AdminsProduits",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4e38c773-65f9-4dfb-9522-68fbbff0829f",
+			"name": "localhost:9090/Produits/Tries",
+			"url": "localhost:9090/Produits/Tries",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 27,
+	"collection": {
+		"requests": [
+			{
+				"id": "52611f17-f883-4449-9ee2-0ced43aeaf54",
+				"method": "POST"
+			},
+			{
+				"id": "79d9d3cb-95e5-45b5-8b40-6894ccad8d1d",
+				"method": "POST"
+			},
+			{
+				"id": "7788eb0b-daca-4ad0-869c-e4e856afc777",
+				"method": "GET"
+			},
+			{
+				"id": "aa799d0a-2bc6-4d97-93c7-d9d6ddc270b8",
+				"method": "GET"
+			},
+			{
+				"id": "4e38c773-65f9-4dfb-9522-68fbbff0829f",
+				"method": "GET"
+			}
+		]
+	}
+}
