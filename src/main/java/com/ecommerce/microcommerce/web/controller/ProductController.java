@@ -1,6 +1,7 @@
 package com.ecommerce.microcommerce.web.controller;
 
 import com.ecommerce.microcommerce.dao.ProductDao;
+import com.ecommerce.microcommerce.web.exceptions.ProduitGratuitException;
 import com.ecommerce.microcommerce.model.Product;
 import com.ecommerce.microcommerce.service.CalculMargeService;
 import com.ecommerce.microcommerce.web.exceptions.ProduitIntrouvableException;
@@ -67,12 +68,14 @@ public class ProductController {
     //ajouter un produit
     @PostMapping(value = "/Produits")
 
-    public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
+    public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) throws ProduitGratuitException {
 
+        if(product.getPrix()==0){throw new ProduitGratuitException("rien n'est gratuit :(");}
         Product productAdded = productDao.save(product);
 
         if (productAdded == null)
             return ResponseEntity.noContent().build();
+
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
