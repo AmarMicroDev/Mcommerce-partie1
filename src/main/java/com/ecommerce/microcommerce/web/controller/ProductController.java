@@ -114,5 +114,10 @@ public class ProductController {
         return afficheMarge + "}";
     }
 
+    @GetMapping(value = "/Produits/Tries")
+    public List<Product> trierProduitsParOrderAlphabetique(){
+        return productDao.findAllByOrderByNom();
+    }
+
 
 }
