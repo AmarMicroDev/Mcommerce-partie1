@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.validation.Valid;
 
 
@@ -103,6 +105,16 @@ public class ProductController {
         return productDao.chercherUnProduitCher(prix);
     }
 
+    @GetMapping(value = "/AdminProduits")
+    public Map<Product, Integer> calculerMargeProduit() {
+        Iterable<Product> produits = productDao.findAll();
+
+        Map<Product, Integer> m = new HashMap<Product, Integer>();
+        for (Product p : produits) {
+            m.put(p, p.getPrix() - p.getPrixAchat());
+        }
+        return m;
+    }
 
 
 }
