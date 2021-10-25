@@ -14,9 +14,9 @@ import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+import javax.validation.Valid;
 
 
 @Api( description="API pour es opérations CRUD sur les produits.")
@@ -86,7 +86,7 @@ public class ProductController {
     @DeleteMapping (value = "/Produits/{id}")
     public void supprimerProduit(@PathVariable int id) {
 
-        productDao.delete(id);
+        productDao.deleteById(id);
     }
 
     @PutMapping (value = "/Produits")
@@ -100,7 +100,7 @@ public class ProductController {
     @GetMapping(value = "test/produits/{prix}")
     public List<Product>  testeDeRequetes(@PathVariable int prix) {
 
-        return productDao.chercherUnProduitCher(400);
+        return productDao.chercherUnProduitCher(prix);
     }
 
 
