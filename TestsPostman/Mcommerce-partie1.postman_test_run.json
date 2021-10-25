@@ -1,0 +1,327 @@
+{
+	"id": "de030976-b005-4da6-a05d-d6fb93678243",
+	"name": "Mcommerce-partie1",
+	"timestamp": "2021-10-25T09:44:04.880Z",
+	"collection_id": "15314344-7a3d0840-b5a8-46c1-a252-3c713e14d786",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 14,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "34da8f42-5b49-45f8-adc5-826209f99ddb",
+			"name": "http://localhost:9090/Produits",
+			"url": "http://localhost:9090/Produits",
+			"time": 700,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				700
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "cf52af3c-d142-471e-be50-de347a13e63c",
+			"name": "http://localhost:9090/Produits/1",
+			"url": "http://localhost:9090/Produits/1",
+			"time": 44,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				44
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "dae187b4-1a64-48a8-8928-24ebecd19df5",
+			"name": "http://localhost:9090/Produits",
+			"url": "http://localhost:9090/Produits",
+			"time": 150,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				150
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "92a3dbec-c3f2-4a15-8801-431554339d63",
+			"name": "http://localhost:9090/Produits/1",
+			"url": "http://localhost:9090/Produits/1",
+			"time": 35,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				35
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "02d3aaf2-1757-42c6-957d-d0a6157c71ab",
+			"name": "http://localhost:9090/Produits",
+			"url": "http://localhost:9090/Produits",
+			"time": 59,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				59
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "98cc7d41-a83c-4fbe-ae27-17c472d1326f",
+			"name": "http://localhost:9090/test/produits/700",
+			"url": "http://localhost:9090/test/produits/700",
+			"time": 83,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				83
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "419c2728-8afd-46af-b6f2-a3c0a16c3d45",
+			"name": "http://localhost:9090/AdminProduits",
+			"url": "http://localhost:9090/AdminProduits",
+			"time": 26,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				26
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "acfc5fa6-e6f7-47e5-a705-3348bcebe44d",
+			"name": "http://localhost:9090/TriProduits",
+			"url": "http://localhost:9090/TriProduits",
+			"time": 28,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				28
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "e2e7d76f-52ca-4c37-ba60-9eef0aa66d64",
+			"name": "http://localhost:9090/Produits avec prix nul",
+			"url": "http://localhost:9090/Produits",
+			"time": 46,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				46
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1171,
+	"collection": {
+		"requests": [
+			{
+				"id": "34da8f42-5b49-45f8-adc5-826209f99ddb",
+				"method": "GET"
+			},
+			{
+				"id": "cf52af3c-d142-471e-be50-de347a13e63c",
+				"method": "GET"
+			},
+			{
+				"id": "dae187b4-1a64-48a8-8928-24ebecd19df5",
+				"method": "POST"
+			},
+			{
+				"id": "92a3dbec-c3f2-4a15-8801-431554339d63",
+				"method": "DELETE"
+			},
+			{
+				"id": "02d3aaf2-1757-42c6-957d-d0a6157c71ab",
+				"method": "PUT"
+			},
+			{
+				"id": "98cc7d41-a83c-4fbe-ae27-17c472d1326f",
+				"method": "GET"
+			},
+			{
+				"id": "419c2728-8afd-46af-b6f2-a3c0a16c3d45",
+				"method": "GET"
+			},
+			{
+				"id": "acfc5fa6-e6f7-47e5-a705-3348bcebe44d",
+				"method": "GET"
+			},
+			{
+				"id": "e2e7d76f-52ca-4c37-ba60-9eef0aa66d64",
+				"method": "POST"
+			}
+		]
+	}
+}
